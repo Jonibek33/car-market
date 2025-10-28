@@ -1,8 +1,11 @@
 "use client";
 
+import { Dropdown } from "@mui/joy";
 import "./style.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { Phone, Clock4, MapPin } from "lucide-react";
+import DropDown from "../DropDown/page";
 
 function Footer() {
   const links = [
@@ -54,15 +57,43 @@ function Footer() {
         <Link href={"/taxi-in-credit"}>ТАКСИ В КРЕДИТ</Link>
       </div>
       <div className="middle">
-        <p>КАТАЛОГ АВТО</p>
-        <a>Подробнее</a>
         <div className="brends-avto">
           <div className="left">
-            {links.map((link) => (
-              <Link href={link.path}>{link.name}</Link>
-            ))}
+            <div className="title">
+              <p>КАТАЛОГ АВТО</p>
+              <a href="/catalog">Подробнее</a>
+              <a href="/sitemap">Карта сайта</a>
+            </div>
+            <div className="links">
+              {links.map((link) => (
+                <Link href={link.path}>{link.name}</Link>
+              ))}
+            </div>
           </div>
-          
+          <div className="middle">
+            <div className="title">
+                <p>КРЕДИТ И РАССРОЧКА</p>
+            </div>
+            <div className="links">
+                <Link href="/express-credit">Экспресс-кредит</Link>
+                <Link href="/family-car">Семейный автомобиль</Link>
+                <Link href="/first-car">Первый автомобиль</Link>
+                <Link href="/medicine-worker">Работникам медицины</Link>
+                <Link href="/leasing">Рассрочка</Link>
+                <Link href="/trade-in">Trade-in</Link>
+            </div>
+          </div>
+          <div className="right">
+            <div className="title">
+                <p>Контакты</p>
+            </div>
+            <div className="info">
+                <p> <Phone /> +7 (800) 551-94-31 <br /> <span>+7 (495) 292-18-67</span></p>
+                <p> <Clock4 /> Ежедневно с 08:00 до 21:00</p>
+                <p> <MapPin /> Россия, Москва, 38КМ МКАД, 6Бс1 <br /> <a href="#">Схема проезда</a></p>
+                <DropDown />
+            </div>
+          </div>
         </div>
       </div>
     </main>

@@ -1,0 +1,27 @@
+@use '../assets/styles/_mixins.scss' as *;
+@use '../assets/styles/_settings.scss' as *;
+
+.about-page-container {
+    padding: 50px 100px;
+    @include flex(center, center, column);
+
+    h1 {
+        text-align: center;
+    }
+
+    .about-page-subtitle {
+        text-align: center;
+        width: 60%;
+        margin: 20px auto;
+    }
+
+    .image-container {
+        width: 60%;
+        margin: 20px auto;
+
+        img {
+            width: 100%;
+            height: 400px;
+        }
+    }
+}
